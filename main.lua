@@ -1,6 +1,4 @@
 
-local TEST_FUNC = require("testing")
-
 function exists(filename)
     local f = io.open(filename, "r")
     if f then
@@ -81,7 +79,7 @@ function get_items_numbered(relevant_filename, items_filename)
     return all_items
 end
 
-function get_item_info(all_items, item_name)
+function get_item_info_from_name(all_items, item_name)
     for idx, item_data in pairs(all_items) do
         if item_data[1] == item_name then
             return item_data
@@ -90,4 +88,11 @@ function get_item_info(all_items, item_name)
     return {}
 end
 
-TEST_FUNC.main()
+function get_item_info_from_id(all_items, item_id)
+    for idx, item_data in pairs(all_items) do
+        if item_data[2] == item_id then
+            return item_data
+        end
+    end
+    return {}
+end
