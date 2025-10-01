@@ -1,5 +1,6 @@
-local DATA = require("main")
+local DATA = PricePopup
 local FRAME_NAME = "PricePopupFrame"
+local itemdata = DATA.get_items_numbered("out_list.csv", "items.csv")
 
 
 local frame = CreateFrame("Frame", FRAME_NAME, UIParent, "BasicFrameTemplate")
@@ -40,7 +41,7 @@ end
 
 local function on_chat_message(self, event, msg, author, ...)
     local lowerMsg = string.lower(msg)  
-    local item = DATA.get_item_info_from_id({}, item_id)
+    local item = DATA.get_item_info_from_id(itemdata, item_id)
     local iName, iLink, iRarity, iLevel, iMinLevel, iType, iSubType, iStackCount, iSlot, iText = GetItemInfo(itemID)
 
     if string.find(lowerMsg, "hello") then

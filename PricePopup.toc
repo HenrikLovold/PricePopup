@@ -2,4 +2,8 @@ Interface: 11503
 Title: PricePopup
 Notes: Displays average price of an item in Gorilla raids whenever bids are going.
 Author: HenrikLovold
+items.csv
+out_list.csv
+testing.lua
+main.lua
 PricePopup.lua
